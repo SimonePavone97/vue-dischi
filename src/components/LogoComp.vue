@@ -1,6 +1,6 @@
 <template>
 
-<nav class="navbar navbar-dark bg-dark d-flex justify-content-start">
+<nav class="navbar navbar-dark bg-dark">
       
     <img src="../assets/spotify.png" alt="" height="50px">
 
@@ -12,8 +12,6 @@
 <script>
     export default {
         name: 'LogoComp',
-
-
     }
 </script>
 

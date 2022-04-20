@@ -1,7 +1,17 @@
 <template>
-  <div>
-    <LogoComp/>
-    <ParteAlbum/> 
+  <div class="nero">
+    <div>
+      <LogoComp />
+    </div>
+
+
+
+    <div>
+      <ParteAlbum />
+      <CardAlbum />
+    </div>
+
+
   </div>
 
 </template>
@@ -12,6 +22,7 @@
   import "bootstrap"
   import LogoComp from './components/LogoComp.vue'
   import ParteAlbum from './components/ParteAlbum.vue'
+  import CardAlbum from './components/CardAlbum.vue'
 
 
   export default {
@@ -19,6 +30,7 @@
     components: {
       LogoComp,
       ParteAlbum,
+      CardAlbum
     }
 
   }
@@ -28,4 +40,9 @@
 
 <style lang="scss">
   @import "bootstrap/dist/css/bootstrap.min.css";
+
+  .nero {
+    background-color: red;
+    height: 100vh;
+  }
 </style>
