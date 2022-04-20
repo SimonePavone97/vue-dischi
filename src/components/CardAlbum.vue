@@ -23,4 +23,10 @@
 
 <style scoped lang="scss">
 
+
+img{
+    height: 200px;
+}
+
+
 </style>

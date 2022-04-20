@@ -43,6 +43,6 @@
 
   .nero {
     background-color: red;
-    height: 100vh;
+    
   }
 </style>

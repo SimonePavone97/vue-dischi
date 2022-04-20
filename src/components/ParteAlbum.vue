@@ -1,5 +1,5 @@
 <template>
-  <div class="row">
+  <div class="row row-cols-5 massimo">
     <!--Questo è il componente figlio a cui passare i dati-->
     <CardAlbum v-for="( element, index ) in AlbumArray" :key="index" :poster="element.poster" :title="element.title"
       :author="element.author" :year="element.year" />
@@ -25,8 +25,8 @@
     created() {
       axios.get('https://flynn.boolean.careers/exercises/api/array/music')
         .then((res) => {
-          console.log(res.data);
-          this.AlbumArray = res.data
+          console.log(res.data.response);
+          this.AlbumArray = res.data.response
         })
 
         .catch((error) => {
@@ -38,6 +38,8 @@
 </script>
 
 <style scoped lang="scss">
-
+.massimo{
+  max-width: 100%;
+}
 
 </style>
