@@ -1,48 +1,59 @@
 <template>
-  <div class="nero">
-    <div>
-      <LogoComp />
-    </div>
+  <div id="app">
+    <HeaderComp @selectGenre="filterGenre" />
 
-
-
-    <div>
-      <ParteAlbum />
-      <CardAlbum />
-    </div>
-
-
+    <main>
+      <div class="container">
+        <AlbumsComp :genre="selectedGenre" />
+      </div>
+    </main>
   </div>
-
 </template>
 
-
-
 <script>
-  import "bootstrap"
-  import LogoComp from './components/LogoComp.vue'
-  import ParteAlbum from './components/ParteAlbum.vue'
-  import CardAlbum from './components/CardAlbum.vue'
-
-
+  import HeaderComp from './components/HeaderComp.vue';
+  import AlbumsComp from './components/AlbumsComp.vue';
   export default {
     name: 'App',
     components: {
-      LogoComp,
-      ParteAlbum,
-      CardAlbum
-    }
-
+      HeaderComp,
+      AlbumsComp
+    },
+    data() {
+      return {
+        selectedGenre: 'all'
+      }
+    },
+    methods: {
+      filterGenre(genre) {
+        this.selectedGenre = genre;
+      }
+    },
   }
 </script>
 
-
-
 <style lang="scss">
-  @import "bootstrap/dist/css/bootstrap.min.css";
+  @import './style/variables.scss';
 
-  .nero {
-    background-color: red;
-    
+  // Reset
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: Arial, Helvetica, sans-serif;
+  }
+
+  main {
+    background: $dark-blue;
+    height: 120vh;
+    padding: 40px 0;
+  }
+
+  .container {
+    width: 70%;
+    margin: 0 auto;
   }
 </style>
